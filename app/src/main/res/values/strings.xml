@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Gerenciador Financeiro</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="tipo_class">
+        <item>Outros</item>
+        <item>Água</item>
+        <item>Alimentação</item>
+        <item>Aluguel</item>
+        <item>Automóvel</item>
+        <item>Bebidas</item>
+        <item>Cartão de Crédito</item>
+        <item>Casamento</item>
+        <item>Cerveja</item>
+        <item>Clube</item>
+        <item>Combustível</item>
+        <item>Computador</item>
+        <item>Contribuição</item>
+        <item>Curso</item>
+        <item>Doação</item>
+        <item>Dívida de bar</item>
+        <item>Eletrônicos</item>
+        <item>Empréstimo Bancário</item>
+        <item>Empréstimo</item>
+        <item>Escola</item>
+        <item>Esportes</item>
+        <item>Festa</item>
+        <item>Financiamento</item>
+        <item>Hardware</item>
+        <item>Higiene</item>
+        <item>Hipoteca</item>
+        <item>Hobby</item>
+        <item>Hotel</item>
+        <item>Imposto</item>
+        <item>Internet</item>
+        <item>Lazer</item>
+        <item>Limpeza</item>
+        <item>Lucro</item>
+        <item>Luz</item>
+        <item>Material de Construção</item>
+        <item>Medicamentos</item>
+        <item>Mercado</item>
+        <item>Mão de Obra</item>
+        <item>Padaria</item>
+        <item>Passagem Aérea</item>
+        <item>Passeio</item>
+        <item>Plano de Saúde</item>
+        <item>Prejuízo</item>
+        <item>Prestação</item>
+        <item>Receita</item>
+        <item>Redimento</item>
+        <item>Restituição</item>
+        <item>Salario</item>
+        <item>Saúde</item>
+        <item>Seguro</item>
+        <item>Serviços</item>
+        <item>Sinistro</item>
+        <item>Smartphone</item>
+        <item>Software</item>
+        <item>Sócio Torcedor</item>
+        <item>Tablet</item>
+        <item>Tarifas Bancárias</item>
+        <item>Taxa</item>
+        <item>Telefone</item>
+        <item>Transporte</item>
+        <item>Venda</item>
+    </string-array>
+
+    <string-array name="periodo_class">
+        <item>Unica</item>
+        <item>Diaria</item>
+        <item>Quizenal</item>
+        <item>Mensal</item>
+        <item>Anual</item>
+    </string-array>
+</resources>

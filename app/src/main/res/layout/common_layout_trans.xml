@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DATA: "/>
+
+    <br.edu.ifsp.scl.agsqlitekt.utils.MaskedEditText
+        android:id="@+id/initial_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        app:mask="##/##/####"
+        android:inputType="date" />
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="VALOR: "/>
+
+    <EditText
+        android:id="@+id/editValor"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DESCRIÇÃO: "/>
+
+    <EditText
+        android:id="@+id/editDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TIPO: "/>
+    <RadioGroup
+        android:id="@+id/tipoRg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/credRb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Credito" />
+        <RadioButton
+            android:id="@+id/debt2Rb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Debito" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="CLASSIFICAÇÃO:" />
+    <Spinner
+        android:id="@+id/classSpn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/tipo_class"
+        android:textAlignment="viewEnd" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="PERIODICIDADE:" />
+    <Spinner
+        android:id="@+id/operacaoSpn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/periodo_class"
+        android:clickable="false"
+        android:textAlignment="viewEnd" />
+
+</LinearLayout>
