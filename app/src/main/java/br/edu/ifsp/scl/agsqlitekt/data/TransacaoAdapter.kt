@@ -33,7 +33,7 @@ class TransacaoAdapter(transacoesList: MutableList<Transacao>) :
         t.valor = t.valor
         transacoes.add(t)
         var i = transacoes.indexOf(t)
-        transacoes.sortedBy { it.descricao }
+        transacoes.sortedBy { it.data }
 
         notifyDataSetChanged()
     }
@@ -44,7 +44,7 @@ class TransacaoAdapter(transacoesList: MutableList<Transacao>) :
         val l = ListaTrans()
         var i = l.getPositionlist(transacoes,t.id)
         transacoes.set(i,t)
-        transacoes.sortBy { it.descricao }
+        transacoes.sortBy { it.data }
 
         notifyItemChanged(transacoes.indexOf(t))
     }
