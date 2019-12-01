@@ -1,5 +1,6 @@
 package br.edu.ifsp.scl.agsqlitekt.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,14 +13,13 @@ import br.edu.ifsp.scl.agsqlitekt.data.TransacaoDAO
 import br.edu.ifsp.scl.agsqlitekt.model.Transacao
 import kotlinx.android.synthetic.main.common_layout_trans.*
 import br.edu.ifsp.scl.agsqlitekt.data.ContaDAO
-import br.edu.ifsp.scl.agsqlitekt.utils.Operacao
-import br.edu.ifsp.scl.agsqlitekt.utils.SpinnerUtil
-import br.edu.ifsp.scl.agsqlitekt.utils.Status
-import br.edu.ifsp.scl.agsqlitekt.utils.Tipo
+import br.edu.ifsp.scl.agsqlitekt.model.Conta
+import br.edu.ifsp.scl.agsqlitekt.utils.*
 
 
 class TransDetalheActivity : AppCompatActivity() {
     lateinit var t: Transacao
+    lateinit var c: Conta
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +38,15 @@ class TransDetalheActivity : AppCompatActivity() {
             data.setText(t.dataHora)
 
             val valor: EditText = findViewById(R.id.editValor)
-            valor.setText(t.valor.toString())
+
+            if(t.valor<0){
+                auxValor = Modulo.modulo(t.valor)
+                valor.setText(auxValor.toString())
+            }else{
+                valor.setText(t.valor.toString())
+            }
+
+            //valor.setText(t.valor.toString())
 
             val descricao: EditText = findViewById(R.id.editDesc)
             descricao.setText(t.descricao)
@@ -49,6 +57,8 @@ class TransDetalheActivity : AppCompatActivity() {
             }else{
                 tipo.check(R.id.debt2Rb)
             }
+
+            c = t.contaRecebedor!!
 
             //Spinner Operacao
             val operacaoSpn: Spinner = findViewById(R.id.operacaoSpn)
@@ -76,7 +86,11 @@ class TransDetalheActivity : AppCompatActivity() {
 
         // handle arrow click here
         if (item.getItemId() == android.R.id.home) {
-            finish() // close this activity and return to preview activity (if there is any)
+            //finish() // close this activity and return to preview activity (if there is any)
+            val i = Intent(applicationContext, TransListaActivity::class.java)
+            i.putExtra("conta", c)
+            startActivityForResult(i, 1)
+            return true
         }
 
 
@@ -96,7 +110,11 @@ class TransDetalheActivity : AppCompatActivity() {
             if(data.equals("")){ data = "31/12/2999" }
 
             if(tipo.text.equals("Debito")){
-                auxValor = valor.toDouble() * -1
+                auxValor = Modulo.modulo(valor.toDouble())
+                auxValor = auxValor * -1
+                valor = auxValor.toString()
+            }else{
+                auxValor = Modulo.modulo(valor.toDouble())
                 valor = auxValor.toString()
             }
 
